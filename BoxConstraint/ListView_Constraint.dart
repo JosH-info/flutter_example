@@ -1,0 +1,40 @@
+//ListView constraint 속성 확인
+
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
+void main(){
+    debugPaintSizeEnabled = true; 
+    runApp(MyApp()); 
+
+  }
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Box Constraint',
+      debugShowCheckedModeBanner: false,
+      home:Scaffold(
+        appBar: AppBar(
+          title: Text('constraint test'),
+        ),
+        body:Container(
+          constraints: BoxConstraints(
+            maxHeight: 400,
+            maxWidth: 400,
+            minWidth: 300,
+            minHeight: 300
+          ),
+          color:Colors.yellow,
+          child:ListView(
+            children: <Widget>[
+              Card(child: Text('Hello everyone~')),
+              ListTile(title: Text('Nice to see you'))
+            ],
+          )
+        )
+      )
+    );
+  }
+}
